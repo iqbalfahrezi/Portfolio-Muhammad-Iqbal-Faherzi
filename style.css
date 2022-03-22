@@ -10,3 +10,21 @@
 section {
   padding-top: 12rem;
 }
+
+.Nvidia {
+  position: relative;
+  margin: auto;
+  border: 1px solid;
+  width: 60%;
+  padding-top: 34%;
+}
+
+.Nvidia iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
