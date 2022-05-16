@@ -80,11 +80,23 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-5" data-aos="fade-right" data-aos-offset="420">
-            <p>Graduate From Physics in Electronics and Instrumentation of Riau University in 2021. Has the ability to operate software for programming language using MySQL, HTML, CSS, C# and Python, computer hardware and troubleshoot.</p>
+            <p>
+              I am Muhammad Iqbal Fahrezi, a graduate of Physics in Electronics and Instrumentation of Riau University in 2021. Have experience in troubleshooting computer hardware and software as a computer technician for almost 2 years
+              and have experience in website development for more than 6 months.
+            </p>
           </div>
           <div class="col-md-5" data-aos="fade-left" data-aos-offset="420">
-            <p>Have an interest in a career as a staff member in data science or web developer and I have experience with Tableau and PowerBI software for analysis and data visualization.</p>
+            <p>
+              Has the ability to operate programming language using HTML5/CSS3, PHP, Javascript, MySQL, and Python, computer hardware and troubleshoot. I have an interest in a career as a staff member in website development or data science
+              and I have experience with Tableau and PowerBI for analysis and visualization data.
+            </p>
           </div>
+        </div>
+        <br />
+        <br />
+        <div class="button">
+          <p><a href="https://drive.google.com/file/d/19bOIPKOvM3TY447LJGR9gGd3nwAbLsUK/view?usp=sharing" class="btn-hijau">RESUME PDF FILE</a></p>
+          <p><a href="https://docs.google.com/document/d/1Y-v_G_XJ_J-xMJ7xeYlZWaOi8TXYLTbJ/edit?usp=sharing&ouid=100655779991459140810&rtpof=true&sd=true" class="btn-hijau">RESUME WORD FILE</a></p>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -92,6 +104,151 @@
       </svg>
     </section>
     <!-- akhir About Me -->
+
+    <!-- awal slider -->
+    <div class="sliderword">
+      <ul class="slider-container simple-list" data-aos="fade-down" data-aos-offset="400" id="slider">
+        <li class="slide">
+          <blockquote>"The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents."</blockquote>
+
+          <cite>-Antos Parrish</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>"Pretend that every single person you meet has a sign around his or her neck that says, 'Make me feel important.' Not only will you succeed in sales, you will succeed in life."</blockquote>
+
+          <cite>-Mary Kay Ash</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>
+            "Grit is that ‘extra something' that separates the most successful people from the rest. It's the passion, perseverance, and stamina that we must channel in order to stick with our dreams until they become a reality."
+          </blockquote>
+
+          <cite>-Travis Bradberry</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>
+            “Watch your thoughts; they become words. Watch your words; they become actions. Watch your actions; they become habits. Watch your habits; they become character. Watch your character; it becomes your destiny.”
+          </blockquote>
+
+          <cite>-Lao-Tze</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>"The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack of will."</blockquote>
+
+          <cite>-Vince Lombardi</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>“Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma – which is living with the results of other people’s thinking.”</blockquote>
+
+          <cite>-Steve Jobs</cite>
+        </li>
+
+        <li class="slide">
+          <blockquote>
+            “Everybody wants to be famous, but nobody wants to do the work. I live by that. You grind hard so you can play hard. At the end of the day, you put all the work in, and eventually it’ll pay off. It could be in a year, it could
+            be in 30 years. Eventually, your hard work will pay off.”
+          </blockquote>
+
+          <cite>-Kevin Hart</cite>
+        </li>
+      </ul>
+
+      <a href="#" id="prev" data-aos="fade-down" data-aos-offset="300"></a>
+      <a href="#" id="next" data-aos="fade-down" data-aos-offset="300"></a>
+    </div>
+
+    <script>
+      var slides = document.getElementsByClassName('slide'),
+        slider = document.getElementById('slider'),
+        cursor = 0,
+        slideWidth = 0,
+        topHeight = 0,
+        slideCount = slides.length;
+
+      if (slideCount > 0) {
+        // Get the slide width
+        slideWidth = slides[0].offsetWidth;
+
+        // Set the proper left value for each slide
+        for (var i = 0; i < slideCount; i++) {
+          slides[i].style.left = slideWidth * i + 'px';
+        }
+
+        // Calculate tallest slide
+        calculateTallestSlide();
+
+        // Add the animated class to each slide
+        for (i = 0; i < slideCount; i++) {
+          slides[i].classList.add('animated');
+        }
+
+        // Add an event listener for next button
+        document.getElementById('next').addEventListener('click', function (event) {
+          event.preventDefault();
+
+          if (cursor < slideCount - 1) {
+            moveSlides('forward');
+            cursor++;
+          }
+        });
+
+        // Add an event listener for previous button
+        document.getElementById('prev').addEventListener('click', function (event) {
+          event.preventDefault();
+
+          if (cursor > 0) {
+            moveSlides('backward');
+            cursor--;
+          }
+        });
+
+        // Add event listener for window resize
+        window.addEventListener('resize', function () {
+          // Get the new slide width
+          slideWidth = slides[0].offsetWidth;
+
+          // Recalculate the left position of the slides
+          for (i = 0; i < slides.length; i++) {
+            if (i <= cursor) {
+              slides[i].style.left = '-' + slideWidth * (cursor - i) + 'px';
+            } else if (i > cursor) {
+              slides[i].style.left = slideWidth * (i - cursor) + 'px';
+            }
+          }
+
+          // Recalculate the height of the tallest slide
+          calculateTallestSlide();
+        });
+      }
+
+      // Declare a function that calculates the tallest slide
+      function calculateTallestSlide() {
+        for (var i = 0; i < slideCount; i++) {
+          if (slides[i].offsetHeight > topHeight) {
+            topHeight = slides[i].offsetHeight;
+          }
+        }
+
+        slider.style.height = topHeight + 'px';
+      }
+
+      // Declare a function that will change the slide position
+      function moveSlides(direction) {
+        for (var j = 0; j < slides.length; j++) {
+          if (direction == 'backward') {
+            slides[j].style.left = +slides[j].style.left.replace(/[^-\d\.]/g, '') + slideWidth + 'px';
+          } else if (direction == 'forward') {
+            slides[j].style.left = +slides[j].style.left.replace(/[^-\d\.]/g, '') - slideWidth + 'px';
+          }
+        }
+      }
+    </script>
+    <!-- akhir slider -->
 
     <!-- awal My Projects -->
     <section id="projects">
@@ -104,6 +261,54 @@
         <div class="row">
           <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-offset="420" data-aos-duration="1500">
             <div class="card">
+              <img src="img/PROJECTS SECTION/8.PNG" class="card-img-top" alt="project3" />
+              <div class="card-body">
+                <h5 class="card-title">Movies streaming website using ReactJS and TMDB API</h5>
+                <p class="card-text">
+                  To make this website I use HTML, CSS and Javascript with ReactJS framework and TMDB opensource API, on this website I try to create a movie streaming website, but on this website there is still no movie to watch, only the
+                  front end.
+                </p>
+                <a href="https://iqbalfahrezi.github.io/ReactJS-WebsiteFilm/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-up" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="200">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/10.PNG" class="card-img-top" alt="project1" />
+              <div class="card-body">
+                <h5 class="card-title">Weather App website using VueJS and Openweather API</h5>
+                <p class="card-text">
+                  With this website we can find out the weather and also the temperature in different country because here we use the Openweather API and also if the temperature is above 20° Celcius then the background display will change
+                  according to the existing temperature.
+                </p>
+                <a href="https://vuejs-weatherapps.netlify.app/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="400">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/9.PNG" class="card-img-top" alt="project2" />
+              <div class="card-body">
+                <h5 class="card-title">CRUD website using PHP Laravel Framework</h5>
+                <p class="card-text">On this website I use PHP Laravel 8, MySQL Database and Bootstrap 5 framework. On this website we can create, read, update and delete (CRUD) and search for the required data using the search bar.</p>
+                <a href="https://github.com/iqbalfahrezi/Laravel8-CRUD" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-offset="420" data-aos-duration="1500">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/7.PNG" class="card-img-top" alt="project3" />
+              <div class="card-body">
+                <h5 class="card-title">Simple calculator app using React JS</h5>
+                <p class="card-text">
+                  This is my first time using React JS library to create an apps website, on this website I try to create an online calculator, but on this website there are only basic calculations and still no further calculations.
+                </p>
+                <a href="https://iqbalfahrezi.github.io/ReactJS-CalculatorApp/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-up" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="200">
+            <div class="card">
               <img src="img/PROJECTS SECTION/1.PNG" class="card-img-top" alt="project1" />
               <div class="card-body">
                 <h5 class="card-title">My first Website, only use HTML and CSS</h5>
@@ -115,24 +320,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3" data-aos="flip-up" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="200">
+          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="400">
             <div class="card">
               <img src="img/PROJECTS SECTION/2.PNG" class="card-img-top" alt="project2" />
               <div class="card-body">
                 <h5 class="card-title">My second Website, use HTML, CSS and Javascript</h5>
                 <p class="card-text">This is my second website, on this website I use HTML, CSS, and Javascript to beautify the appearance of my website, this website contains about tour guides and the natural beauty of Indonesia.</p>
                 <a href="https://iqbalfahrezi.github.io/travel_indonesia/" class="btn btn-primary">Go to Website</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="400">
-            <div class="card">
-              <img src="img/PROJECTS SECTION/7.PNG" class="card-img-top" alt="project3" />
-              <div class="card-body">
-                <h5 class="card-title">Simple calculator app using React JS</h5>
-                <p class="card-text">This is my first time using React JS library to create an apps website, on this website I try to create an online calculator, but on this website there are only basic calculations and still no further calculations.
-                  </p>
-                <a href="https://iqbalfahrezi.github.io/ReactJS-CalculatorApp/" class="btn btn-primary">Go to Website</a>
               </div>
             </div>
           </div>
@@ -166,6 +360,51 @@
               </div>
             </div>
           </div>
+          <div class="col-md-4 mb-3" data-aos="flip-right" data-aos-offset="420" data-aos-duration="1500">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/coming soon.png" class="card-img-top" alt="project1" />
+              <div class="card-body">
+                <h5 class="card-title">coming soon... :)</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio modi officia aperiam deserunt iure. Inventore eveniet saepe autem cum aspernatur!</p>
+                <a href="https://iqbalfahrezi.github.io/TokoIqbal.com/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-up" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="200">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/coming soon.PNG" class="card-img-top" alt="project2" />
+              <div class="card-body">
+                <h5 class="card-title">coming soon... :)</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptates nulla quisquam optio est maiores debitis? Assumenda unde saepe a.</p>
+                <a href="https://iqbalfahrezi.github.io/travel_indonesia/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-offset="420" data-aos-duration="1500" data-aos-delay="400">
+            <div class="card">
+              <img src="img/PROJECTS SECTION/coming soon.PNG" class="card-img-top" alt="project3" />
+              <div class="card-body">
+                <h5 class="card-title">coming soon... :)</h5>
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis accusantium nulla cupiditate temporibus hic alias! Facere sequi totam sit harum!</p>
+                <a href="https://iqbalfahrezi.github.io/ReactJS-CalculatorApp/" class="btn btn-primary">Go to Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <button class="btn-1">MORE PROJECTS</button>
+
+          <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+          <script>
+            $(document).ready(function () {
+              $('.card').slice(0, 6).fadeIn();
+              $('.button').click(function () {
+                $('.card').slice(0, 12).fadeIn();
+                $(this).fadeOut();
+              });
+            });
+          </script>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

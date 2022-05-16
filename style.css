@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialised;
+}
+
 .jumbotron {
   padding-top: 7rem;
   background-color: rgb(203, 250, 213);
@@ -5,6 +10,69 @@
 
 #projects {
   background-color: rgb(203, 250, 213);
+}
+
+.card {
+  box-shadow: 0 15px 10px 1px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.btn-hijau {
+  background: #198754;
+  border-radius: 50px;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 200px;
+  padding: 15px 20px 15px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 rgb(0, 255, 242);
+  transition: ease-out 0.7s;
+}
+
+.btn-hijau:hover {
+  background: #0099ff;
+  text-decoration: none;
+  color: #fffb01;
+  box-shadow: inset 300px 0 0 0 #0099ff;
+  cursor: pointer;
+  color: #fffb01;
+}
+
+.card img:hover {
+  transform: scale(1.5);
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-1 {
+  width: 300px;
+  height: 50px;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: #198754;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0 rgb(0, 255, 242);
+  transition: ease-out 0.7s;
+  font-size: 2rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.btn-1:hover {
+  box-shadow: inset 300px 0 0 0 #0099ff;
+  cursor: pointer;
+  color: #fffb01;
 }
 
 section {
@@ -27,4 +95,94 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.sliderword {
+  position: relative;
+  background-color: rgb(203, 250, 213);
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(203, 250, 213);
+  width: 80%;
+  left: 10%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.slide.animated {
+  -webkit-transition: left 1s ease-in;
+  transition: left 1s ease-in;
+}
+
+blockquote {
+  color: #636363;
+  font-weight: 600;
+  font-size: 25px;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+cite {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.simple-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#prev {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999;
+  display: inline-block;
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background-image: url('6_slider/kiri.png');
+}
+
+#prev:hover {
+  background-image: url('6_slider/kiri2.png');
+}
+
+#next {
+  position: absolute;
+  left: 91%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999;
+  display: inline-block;
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  right: 0;
+  background-image: url('6_slider/kanan.png');
+}
+
+#next:hover {
+  background-image: url('6_slider/kanan2.png');
 }
