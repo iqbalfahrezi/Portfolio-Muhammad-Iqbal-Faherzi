@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialised;
@@ -167,6 +171,7 @@ cite {
 
 #next {
   position: absolute;
+  margin-left: -32px;
   left: 91%;
   top: 50%;
   transform: translateY(-50%);
@@ -185,4 +190,27 @@ cite {
 
 #next:hover {
   background-image: url('6_slider/kanan2.png');
+}
+
+.gotop {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background-color: #198754;
+  bottom: 40px;
+  right: 50px;
+  border-radius: 40%;
+
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+  font-size: 30px;
+  box-shadow: inset 0 0 0 0 rgb(0, 255, 242);
+  transition: ease-out 0.3s;
+}
+
+.gotop:hover {
+  color: #fffb01;
+  background-color: #0099ff;
 }
